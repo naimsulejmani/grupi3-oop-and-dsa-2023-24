@@ -1,4 +1,4 @@
-package before_oop;
+package oop.before_oop;
 
 public class MemoryTest {
     public static void main(String[] args) {
