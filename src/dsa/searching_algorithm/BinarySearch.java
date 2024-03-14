@@ -20,6 +20,10 @@ public class BinarySearch {
         return searchIndex(array, searchValue) >= 0;
     }
 
+
+
+
+
     public static void main(String[] args) {
         int[] array = {11, 22, 33, 44, 55, 66, 77, 88, 99, 1010};
         int index1 = searchIndex(array, 77);
