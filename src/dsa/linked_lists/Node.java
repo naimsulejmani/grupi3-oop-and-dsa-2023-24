@@ -1,4 +1,4 @@
-package dsa.adts.linked_lists;
+package dsa.linked_lists;
 
 public class Node {
     private int data;

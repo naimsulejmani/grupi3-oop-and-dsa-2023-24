@@ -1,4 +1,4 @@
-package dsa.adts.linked_lists;
+package dsa.linked_lists;
 
 public class NodeDemo {
     public static void main(String[] args) {
