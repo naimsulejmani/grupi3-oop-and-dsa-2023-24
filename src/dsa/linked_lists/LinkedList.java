@@ -7,6 +7,10 @@ public class LinkedList {
     public LinkedList() {
     }
 
+    public LinkedList(int[] array) {
+        appendFirst(array);
+    }
+
     public boolean isEmpty() {
         return head == null;
     }
@@ -79,9 +83,120 @@ public class LinkedList {
         }
     }
 
+    private Integer findByIndex(int index) {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return null;
+        } else if (index < 0 || index >= size) {
+            System.out.println("out of bounds");
+            return null;
+        }
+        return findNodeByIndex(index).getData();
+    }
+
+    private Node findNodeByIndex(int index) {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return null;
+        } else if (index < 0 || index >= size) {
+            System.out.println("out of bounds");
+            return null;
+        } else {
+            Node current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.getNext();
+            }
+            return current;
+        }
+    }
+
+    public void addAfterIndex(int index, int data) {
+        if (index < 0 || index >= size) {
+            System.out.println("Out of bounds");
+        } else if (index == 0) {
+            addFirst(data);
+        } else if (index == size - 1) {
+            addLast(data);
+        } else {
+            Node newNode = new Node(data);
+            Node current = findNodeByIndex(index);
+            newNode.setNext(current.getNext());
+            current.setNext(newNode);
+            size++;
+        }
+    }
+
+    public void removeByIndex(int index) {
+        if (isEmpty()) {
+            System.out.println("List is empty!");
+        } else if (index < 0 || index >= size) {
+            System.out.println("Out of bounds");
+        } else if (index == 0) {
+            removeFirst();
+        } else if (index == size - 1) {
+            removeLast();
+        } else {
+            Node current = findNodeByIndex(index - 1);
+//            Node next = current.getNext();
+            current.setNext(current.getNext().getNext());
+//            next.setNext(null);
+            size--;
+        }
+    }
+
+    public Integer findFirst() {
+        if (isEmpty()) {
+            System.out.println("List is empty!");
+            return null;
+        }
+        return head.getData();
+        //return findNodeByIndex(0).getData();
+    }
+
+    public Integer findLast() {
+        if (isEmpty()) {
+            System.out.println("List is empty!");
+            return null;
+        }
+        return findNodeByIndex(size - 1).getData();
+    }
+
+    public int[] toArray() {
+        int[] array = new int[size];
+        Node current = head;
+        for (int i = 0; i < size; i++) {
+            array[i] = current.getData();
+            current = current.getNext();
+        }
+        return array;
+    }
+
+    private Node[] toNodeArray() {
+        Node[] array = new Node[size];
+        Node current = head;
+        for (int i = 0; i < size; i++) {
+            array[i] = current;
+            current = current.getNext();
+        }
+        return array;
+    }
+
+    public void appendLast(int[] array) {
+        for (int number : array) {
+            addLast(number);
+        }
+    }
+
+    public void appendFirst(int[] array) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            addFirst(array[i]);
+        }
+    }
+
+
     /*
         addAfterIndex(index, data)
-        removeIndex(index)
+        removeByIndex(index)
         findPrevious(node)
         findAll()
         findFirst();
