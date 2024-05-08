@@ -8,6 +8,7 @@ public class QueueDemo {
             queue.enqueue("Ylli");
             queue.enqueue("Kreshniku");
             System.out.println(queue.dequeue());
+
         } catch (QueueException e) {
             System.out.println("Gabimi u trajtua me suksese!!!!");
             System.out.println(e.getMessage());
