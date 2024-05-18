@@ -16,5 +16,10 @@ public class BSTDemo {
         bst.preOrderTraversal();
         System.out.println("POST ORDER TRAVERSAL");
         bst.postOrderTraversal();
+
+        System.out.println("Minimal Node = " + bst.minimal());
+        System.out.println("Maximal Node = " + bst.maximal());
+        System.out.println("Exist node 25 = " + bst.contains(25));
+        System.out.println("Exists node 40 = " + bst.contains(40));
     }
 }
