@@ -13,5 +13,8 @@ public class StudentDemo {
         /*
         trashegmia shkon prej prindit tek femija dhe jo e kunderta
          */
+
+
+
     }
 }
