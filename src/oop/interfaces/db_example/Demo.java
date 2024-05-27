@@ -5,8 +5,12 @@ import java.util.List;
 public class Demo {
     public static void main(String[] args) {
 
-        String driver = "mssql";
-        String connectionString = "";
+        if (args.length < 2) {
+            throw new IllegalArgumentException("Missing arguments such as driver  & connectionString!");
+        }
+
+        String driver = args[0];
+        String connectionString = args[1];
 
         //close()
         try (DbConnection connection = getConnection(driver, connectionString)) {
@@ -33,7 +37,43 @@ public class Demo {
 
     }
 
-    private static DbConnection getConnection(String driver, String connectionString) {
-        return null;
+    private static DbConnection getConnection(String driver, String connectionString) throws SQLException {
+        switch (driver) {
+            case "mssql" -> {
+                return new MSSQLConnection(connectionString);
+            }
+            case "mysql" -> {
+                return new MySQLConnection(connectionString);
+            }
+            case "postgres" -> {
+                return new PostgreSQLConnection(connectionString);
+            }
+            default -> throw new IllegalArgumentException("Invalid driver provided!");
+        }
+
+        /*
+            return switch(driver) {
+
+            }
+
+         */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
