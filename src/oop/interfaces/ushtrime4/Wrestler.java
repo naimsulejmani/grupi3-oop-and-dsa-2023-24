@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime4;
+package oop.interfaces.ushtrime4;
 
 public interface Wrestler {
     void paymentForWork(int hours);

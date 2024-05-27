@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime3;
+package oop.interfaces.ushtrime3;
 
 public class Demo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime4;
+package oop.interfaces.ushtrime4;
 
 import java.util.Collection;
 import java.util.Comparator;

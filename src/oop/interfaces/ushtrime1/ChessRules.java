@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime1;
+package oop.interfaces.ushtrime1;
 
 public class ChessRules implements RuleSet {
     @Override

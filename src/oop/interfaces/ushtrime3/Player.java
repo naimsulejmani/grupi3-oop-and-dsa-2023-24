@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime3;
+package oop.interfaces.ushtrime3;
 
 public interface Player {
     void wish();

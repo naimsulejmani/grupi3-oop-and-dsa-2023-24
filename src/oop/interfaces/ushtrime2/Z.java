@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime2;
+package oop.interfaces.ushtrime2;
 
 public class Z implements Y {
     @Override

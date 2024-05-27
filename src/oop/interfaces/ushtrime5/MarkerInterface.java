@@ -1,4 +1,4 @@
-package oop.inheritance.ushtrime5;
+package oop.interfaces.ushtrime5;
 
 public interface MarkerInterface {
 
