@@ -1,6 +1,6 @@
 package oop.generics;
 
-public class NodeInt {
+public class NodeInt implements Comparable<NodeInt>{
     private int data;
     private NodeInt next;
 
@@ -21,5 +21,10 @@ public class NodeInt {
 
     public void setNext(NodeInt next) {
         this.next = next;
+    }
+
+    @Override
+    public int compareTo(NodeInt o) {
+        return 0;
     }
 }
